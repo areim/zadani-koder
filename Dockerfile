@@ -1,4 +1,4 @@
-FROM timbru31/ruby-node
+FROM timbru31/ruby-node:3.4-22
 
 RUN mkdir -p /app
 

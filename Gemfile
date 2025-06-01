@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "3.2.2"
+ruby "3.4.4"
 
 gem "rails", "~> 7.0.4", ">= 7.0.4.2"
 gem "sprockets-rails"
@@ -20,6 +20,9 @@ gem "bootsnap", require: false
 gem 'search_object_graphql', '0.3.1'
 gem 'search_object', '~> 1.2', '>= 1.2.5'
 gem 'webpacker', '~> 5.x'
+gem 'base64'
+gem 'bigdecimal'
+gem 'mutex_m'
 
 group :development, :test do
   gem 'faker'

@@ -1,7 +1,7 @@
 version: '3.7'
 
 x-app: &app
-  image: timbru31/ruby-node
+  image: "fakturaonline/app"
   # env_file:
   #   - .env
   volumes:
