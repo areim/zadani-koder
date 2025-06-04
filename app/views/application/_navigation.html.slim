@@ -5,3 +5,8 @@ div.navbar
     ul.navbar-navigation
       span.navbar-cta = t('.free_in_30_seconds_html')
       = link_to_menu_item :li, t('.invoice'), root_path, class: 'el-button el-button--warning navbar-navigation__link--invoice', wrapper_options: { class: 'navbar-navigation__item navbar-navigation__item--new-invoice' }
+    ul.navbar-navigation
+      = link_to_menu_item :li, t('.news'), news_path
+      = link_to_menu_item :li, t('.guides'), guides_path
+      = link_to_menu_item :li, t('.support'), support_path
+      = link_to_menu_item :li, t('.newsletter'), newsletter_path

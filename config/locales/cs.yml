@@ -38,6 +38,10 @@ cs:
       logo_alt: FakturaOnline.cz
       logo_height: 13
       logo_width: 229
+      news: Novinky
+      guides: Návody
+      support: Mám problém
+      newsletter: Podnikatelský zpravodaj
     footer:
       company_name_html: FakturaOnline&nbsp;s.r.o.
       heading_1: Sledujte nás
@@ -67,3 +71,15 @@ cs:
       link_9: Neziskové organizace
       select_region: "Zvolte region:"
       support_link: https://podpora.fakturaonline.cz
+  news:
+    index:
+      title: Novinky
+  guides:
+    index:
+      title: Návody
+  support:
+    index:
+      title: Mám problém
+  newsletter:
+    index:
+      title: Podnikatelský zpravodaj
