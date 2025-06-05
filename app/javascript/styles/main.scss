@@ -1,8 +1,5 @@
 $--font-path: '~element-ui/lib/theme-chalk/fonts';
-
 @import '~element-ui/packages/theme-chalk/src/index.scss';
-@import './frontend/base.scss';
-@import './frontend/utilities.scss';
 
 @import '~bootstrap/scss/functions';
 @import '~bootstrap/scss/variables';
@@ -39,7 +36,9 @@ $--font-path: '~element-ui/lib/theme-chalk/fonts';
 @import '~bootstrap/scss/spinners';
 @import '~bootstrap/scss/utilities';
 
+@import './base/base.scss';
 @import './base/typo';
+@import './base/utilities.scss';
 
 @import './components/block';
 @import './components/button';
