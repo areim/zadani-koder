@@ -1,4 +1,4 @@
-import '../styles/frontend-styles.scss';
+import '../styles/main.scss';
 import Vue from 'vue';
 import VueApollo from 'vue-apollo';
 import { format } from 'date-fns';

@@ -5,8 +5,8 @@ const isMochaTest = process.env.MOCHA_TEST === 'true';
 const CssLoaders = isMochaTest ? ['css-loader'] : [MiniCssExtractPlugin.loader, 'css-loader'];
 const dataVue = {
   additionalData: `
-    @import './app/javascript/styles/frontend/element-ui-variables.scss';
-    @import './app/javascript/styles/new-design/base/variables.scss';
+    @import './app/javascript/styles/base/element-ui-variables.scss';
+    @import './app/javascript/styles/base/variables.scss';
     @import '~element-ui/packages/theme-chalk/src/mixins/mixins.scss';
     @import '~element-ui/packages/theme-chalk/src/mixins/utils.scss';
     @import '~include-media/dist/_include-media.scss';
