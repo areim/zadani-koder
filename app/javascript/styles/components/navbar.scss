@@ -13,9 +13,9 @@
 
 .navbar__claim {
   position: absolute;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   text-align: center;
-  width: 100%;
   display: none;
 
   @include media-breakpoint-up(lg) {
