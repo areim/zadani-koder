@@ -64,3 +64,9 @@ p {
 .grecaptcha-badge {
   visibility: hidden;
 }
+
+.gap-2 {
+  > * + * {
+    margin-left: 0.5rem;
+  }
+}
