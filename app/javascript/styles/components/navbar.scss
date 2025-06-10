@@ -6,3 +6,19 @@
     @extend .nav-link;
     font-weight: 600;
   }
+
+.navbar__claim-row {
+  position: relative;
+}
+
+.navbar__claim {
+  position: absolute;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  display: none;
+
+  @include media-breakpoint-up(lg) {
+    display: block;
+  }
+}
