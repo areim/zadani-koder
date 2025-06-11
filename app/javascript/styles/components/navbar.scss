@@ -9,6 +9,7 @@
 
 .navbar__claim-row {
   position: relative;
+  min-height: rem(65);
 }
 
 .navbar__claim {
@@ -16,7 +17,6 @@
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
-  font-weight: bold;
   display: none;
 
   @include media-breakpoint-up(lg) {
