@@ -31,7 +31,7 @@ cs:
       recent_posts: Aktuálně z blogu
   application:
     navigation:
-      free_in_30_seconds_html: Vystavujte faktury <strong>zdarma</strong> za méně než 30 vteřin.
+      free_in_30_seconds_html: Vystavujte faktury zdarma za méně než 30 vteřin.
       homepage: Úvod
       invoice: Vystavit fakturu
       login: Přihlásit se

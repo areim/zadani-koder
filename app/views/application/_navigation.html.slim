@@ -8,8 +8,14 @@ header.navbar
 
       nav.ml-auto aria-label="User actions"
         ul.d-flex.gap-2.list-unstyled.mb-0
-          li = link_to t('.invoice'), root_path, class: 'el-button el-button--warning'
-          li = link_to t('.login'), root_path, class: 'el-button'
+          li
+            = link_to root_path, class: 'el-button el-button--warning' do
+              i.el-icon-document-add
+              = t('.invoice')
+          li
+            = link_to root_path, class: 'el-button' do
+              i.el-icon-user
+              = t('.login')
 
   .container
     nav.d-flex.justify-content-center.w-100.pb-3 aria-label="Main navigation"
