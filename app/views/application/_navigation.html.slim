@@ -1,8 +1,9 @@
-header.navbar
+header.navbar.d-flex.flex-column.w-100
   .container
     .d-flex.align-items-center.w-100.navbar__claim-row
       = link_to root_path, class: 'navbar-brand'
-        = image_tag "fakturaonline_logo.svg", alt: t('.logo_alt'), width: t('.logo_width'), height: t('.logo_height')
+        = image_tag "fakturaonline_logo.svg", alt: t('.logo_alt'), width: t('.logo_width'), height: t('.logo_height'), class: 'd-none d-sm-block'
+        = image_tag "logo-square.svg", alt: t('.logo_alt'), width: t('.logo-sm_width'), height: t('.logo-sm_height'), class: 'd-sm-none'
 
       .navbar__claim = t('.free_in_30_seconds_html')
 
@@ -11,11 +12,11 @@ header.navbar
           li
             = link_to root_path, class: 'el-button el-button--warning' do
               i.el-icon-document-add
-              = t('.invoice')
+              span.d-none.d-sm-inline = t('.invoice')
           li
             = link_to root_path, class: 'el-button' do
               i.el-icon-user
-              = t('.login')
+              span.d-none.d-sm-inline = t('.login')
 
   .container
     nav.d-flex.justify-content-center.w-100.pb-3 aria-label="Main navigation"

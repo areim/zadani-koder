@@ -38,6 +38,8 @@ cs:
       logo_alt: FakturaOnline.cz
       logo_height: 19
       logo_width: 229
+      logo-sm_width: 40
+      logo-sm_height: 40
       news: Novinky
       guides: Návody
       support: Mám problém
