@@ -1,4 +1,4 @@
-nav.navbar
+header.navbar
   .container
     .d-flex.align-items-center.w-100.navbar__claim-row
       = link_to root_path, class: 'navbar-brand'
@@ -6,3 +6,15 @@ nav.navbar
 
       .navbar__claim = t('.free_in_30_seconds_html')
 
+      nav.ml-auto aria-label="User actions"
+        ul.d-flex.gap-2.list-unstyled.mb-0
+          li = link_to t('.invoice'), root_path, class: 'el-button el-button--warning'
+          li = link_to t('.login'), root_path, class: 'el-button'
+
+  .container
+    nav.d-flex.justify-content-center.w-100.pb-3 aria-label="Main navigation"
+      ul.navbar-navigation.nav.d-flex.justify-content-center.align-items-center.w-100.font-weight-bold
+        = link_to_menu_item :li, t('.news'), news_path
+        = link_to_menu_item :li, t('.guides'), guides_path
+        = link_to_menu_item :li, t('.support'), support_path
+        = link_to_menu_item :li, t('.newsletter'), newsletter_path
