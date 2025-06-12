@@ -62,3 +62,9 @@
 .fs-17 {
   font-size: rem(17);
 }
+
+.gap-2 {
+  > * + * {
+    margin-left: 0.5rem;
+  }
+}

@@ -31,13 +31,15 @@ cs:
       recent_posts: Aktuálně z blogu
   application:
     navigation:
-      free_in_30_seconds_html: Vystavujte faktury <strong>zdarma</strong> za méně než 30 vteřin.
+      free_in_30_seconds_html: Vystavujte faktury zdarma za méně než 30 vteřin.
       homepage: Úvod
       invoice: Vystavit fakturu
       login: Přihlásit se
       logo_alt: FakturaOnline.cz
-      logo_height: 13
+      logo_height: 19
       logo_width: 229
+      logo-sm_width: 40
+      logo-sm_height: 40
       news: Novinky
       guides: Návody
       support: Mám problém
