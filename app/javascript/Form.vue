@@ -8,7 +8,7 @@
           <text x="12" y="17" text-anchor="middle" fill="white" font-size="16" font-family="Arial" dy="-2">i</text>
         </svg>
       </span>
-      <span class="form-card__title">Základní údaje</span>
+      <span class="form-card__title">{{ $t('form.formTitle') }}</span>
     </div>
     <div class="form-card__body">
       <Form :model="resource" ref="form">

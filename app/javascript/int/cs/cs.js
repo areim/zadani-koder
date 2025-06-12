@@ -9,6 +9,7 @@ const messages = {
       title: 'Aktuálně z blogu',
     },
     form: {
+      formTitle: 'Zakladni udaje',
       invoiceForm: {
         fields: {
           invoiceKind: {
