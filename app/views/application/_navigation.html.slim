@@ -4,7 +4,7 @@ header.navbar.d-flex.flex-column.w-100.p-0
       = link_to root_path, class: 'navbar-brand'
         = image_tag "fakturaonline_logo.svg", alt: t('.logo_alt'), width: t('.logo_width'), height: t('.logo_height')
 
-      .navbar__claim = t('.free_in_30_seconds_html')
+      .navbar__claim.d-none.d-xl-block = t('.free_in_30_seconds_html')
 
       nav.ml-auto aria-label="User actions"
         ul.d-flex.gap-2.list-unstyled.mb-0
@@ -18,8 +18,8 @@ header.navbar.d-flex.flex-column.w-100.p-0
               span.d-none.d-md-inline = t('.login')
 
   .container
-    nav.d-flex.justify-content-center.w-100.pb-3 aria-label="Main navigation"
-      ul.navbar-navigation.nav.d-flex.justify-content-center.align-items-center.w-100.font-weight-bold
+    nav.w-100.pb-3 aria-label="Main navigation"
+      ul.nav.d-flex.justify-content-center.align-items-center.w-100.font-weight-bold
         = link_to_menu_item :li, t('.news'), news_path
         = link_to_menu_item :li, t('.guides'), guides_path
         = link_to_menu_item :li, t('.support'), support_path

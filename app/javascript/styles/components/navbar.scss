@@ -4,6 +4,10 @@
 
 .nav > li {
     @extend .nav-item;
+
+    &.active > a {
+      text-decoration: none;
+    }
   }
 
   .nav > li > a {
@@ -21,9 +25,4 @@
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
-  display: none;
-
-  @include media-breakpoint-up(xl) {
-    display: block;
-  }
 }
