@@ -1,97 +1,94 @@
 <template>
-  <div>
-    <Form
-      :model="resource"
-      ref="form"
-    >
-      <FormGroup
-        prop="invoiceKind"
-        :label="$t('form.invoiceForm.fields.invoiceKind.label')"
-        :help="$t('form.invoiceForm.fields.invoiceKind.inputHelp')"
-      >
-        <Select
-          v-model="resource.invoiceKind"
-          :placeholder="$t('form.invoiceForm.fields.invoiceKind.placeholder')"
-          name="invoiceKind"
-        >
-          <Option
-            v-for="option in invoiceKinds"
-            :key="option.value"
-            :label="option.name"
-            :value="option.value"
-          />
-        </Select>
-      </FormGroup>
-
-      <FormGroup
-        prop="number"
-        :label="$t('form.invoiceForm.fields.number.label')"
-      >
-        <TextInput
-          name="number"
-          type="string"
-          v-model="resource.number"
-        />
-      </FormGroup>
-
-      <FormGroup
-        prop="vs"
-        :label="$t('form.invoiceForm.fields.vs.label')"
-      >
-        <TextInput
-          name="vs"
-          type="string"
-          v-model="resource.vs"
-        />
-      </FormGroup>
-
-      <FormGroup
-        prop="vs"
-        :label="$t('form.invoiceForm.fields.ks.label')"
-      >
-        <TextInput
-          name="ks"
-          type="string"
-          v-model="resource.ks"
-        />
-      </FormGroup>
-
-      <FormGroup
-        input-narrow
-        prop="issedOn"
-        :label="$t('form.invoiceForm.fields.issedOn.label')"
-      >
-        <DatePicker
-          v-model="resource.issedOn"
-          value-format="timestamp"
-          :clearable="false"
-        />
-      </FormGroup>
-
-      <FormGroup
-        prop="invoiceKind"
-        :label="$t('form.invoiceForm.fields.maturity.label')"
-      >
-        <Select
-          v-model="resource.maturityKind"
-          :placeholder="$t('form.invoiceForm.fields.maturityKind.placeholder')"
-          name="maturityKind"
-        >
-          <Option
-            v-for="option in maturityKinds"
-            :key="option.value"
-            :label="option.name"
-            :value="option.value"
-          />
-        </Select>
-      </FormGroup>
-
-    </Form>
+  <div class="form-card">
+    <div class="form-card__header">
+      <span class="form-card__icon">
+        <!-- You can replace this with an SVG or font icon as needed -->
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="12" fill="#097FB5"/>
+          <text x="12" y="17" text-anchor="middle" fill="white" font-size="16" font-family="Arial" dy="-2">i</text>
+        </svg>
+      </span>
+      <span class="form-card__title">{{ $t('form.formTitle') }}</span>
+    </div>
+    <div class="form-card__body">
+      <Form :model="resource" ref="form">
+        <div class="form-row">
+          <div class="form-col form-col--left">
+            <FormGroup
+              prop="invoiceKind"
+              :help="$t('form.invoiceForm.fields.invoiceKind.inputHelp')"
+            >
+              <Select
+                v-model="resource.invoiceKind"
+                :placeholder="$t('form.invoiceForm.fields.invoiceKind.label')"
+                name="invoiceKind"
+              >
+                <Option
+                  v-for="option in invoiceKinds"
+                  :key="option.value"
+                  :label="option.name"
+                  :value="option.value"
+                />
+              </Select>
+            </FormGroup>
+            <FormGroup prop="number">
+              <FloatingLabelInput
+                name="number"
+                type="text"
+                v-model="resource.number"
+                :placeholder="$t('form.invoiceForm.fields.number.label')"
+              />
+            </FormGroup>
+            <div class="form-row--grouped">
+              <FormGroup prop="vs">
+                <FloatingLabelInput
+                  name="vs"
+                  type="text"
+                  v-model="resource.vs"
+                  :placeholder="$t('form.invoiceForm.fields.vs.label')"
+                />
+              </FormGroup>
+              <FormGroup prop="ks">
+                <FloatingLabelInput
+                  name="ks"
+                  type="text"
+                  v-model="resource.ks"
+                  :placeholder="$t('form.invoiceForm.fields.ks.label')"
+                />
+              </FormGroup>
+            </div>
+          </div>
+          <div class="form-col form-col--right">
+            <FormGroup prop="issedOn">
+              <DatePicker
+                v-model="resource.issedOn"
+                value-format="timestamp"
+                :clearable="false"
+                :placeholder="$t('form.invoiceForm.fields.issedOn.label')"
+              />
+            </FormGroup>
+            <FormGroup prop="maturityKind">
+              <Select
+                v-model="resource.maturityKind"
+                :placeholder="$t('form.invoiceForm.fields.maturity.label')"
+                name="maturityKind"
+              >
+                <Option
+                  v-for="option in maturityKinds"
+                  :key="option.value"
+                  :label="option.name"
+                  :value="option.value"
+                />
+              </Select>
+            </FormGroup>
+          </div>
+        </div>
+      </Form>
+    </div>
   </div>
 </template>
 
 <script>
-
 export default {
   name: 'BasicForm',
   data: () => ({
@@ -100,7 +97,8 @@ export default {
       vs: '',
       ks: '',
       issedOn: '',
-      invoiceKind: 'vat_invoice'
+      invoiceKind: '',
+      maturityKind: ''
     },
     invoiceKinds: [
       { value: 'vat_invoice', name: 'Faktura s DPH' },
@@ -116,5 +114,54 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+.form-card {
+  border: 1px solid $--color-light-blue-new;
+  border-radius: 12px;
+  background: #fff;
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: 0 2px 8px rgba(9, 127, 181, 0.04);
+}
+.form-card__header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.form-card__icon {
+  margin-right: 1rem;
+  display: flex;
+  align-items: center;
+}
+.form-card__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: $--color-primary;
+}
+.form-card__body {
+  width: 100%;
+}
+.form-row {
+  display: flex;
+  gap: 2rem;
+
+  @media (max-width: $--breakpoint-sm) {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+.form-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.form-row--grouped {
+  display: flex;
+  gap: 1rem;
+}
+
+.form-row--grouped > * {
+  flex: 1;
+}
 </style>

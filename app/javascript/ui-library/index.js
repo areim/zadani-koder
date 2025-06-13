@@ -7,6 +7,7 @@ import Form from './Form.vue';
 import FormGroup from './FormGroup.vue';
 import Option from './Option.vue';
 import DatePicker from './DatePicker.vue';
+import FloatingLabelInput from './FloatingLabelInput.vue';
 
 Vue.component('Form', Form);
 Vue.component('FormGroup', FormGroup);
@@ -16,6 +17,7 @@ Vue.component('TextInput', TextInput);
 Vue.component('NumericInput', NumericInput);
 Vue.component('Option', Option);
 Vue.component('DatePicker', DatePicker);
+Vue.component('FloatingLabelInput', FloatingLabelInput);
 
 export default {
   Form,
@@ -25,5 +27,6 @@ export default {
   TextInput,
   NumericInput,
   Option,
-  DatePicker
+  DatePicker,
+  FloatingLabelInput
 }

@@ -17,12 +17,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  :deep() {
+  ::v-deep {
     &.el-date-editor {
+      width: 100%;
       &.el-input--prefix {
         .el-input__inner {
           padding-right: rem(48px);
           padding-left: rem(8px);
+          border-color: $--color-light-blue-new;
+
+          &::placeholder {
+            color: $--color-gray-1;
+          }
         }
 
         .el-input__prefix {
@@ -30,8 +36,7 @@ export default {
           right: 0;
           border-right: 0;
           border-left: $--input-border;
-          background-color: $--color-primary;
-          color: $--color-white;
+          color: $--color-primary;
           border-radius: 0 4px 4px 0;
         }
       }

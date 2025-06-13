@@ -28,13 +28,13 @@ export default {
   height: rem(36);
 
   &::placeholder {
-    color: $--color-lighter-blue-new;
+    color: $--color-gray-1;
   }
 }
 
 .el-textarea__inner {
   &::placeholder {
-    color: $--color-lighter-blue-new;
+    color: $--color-gray-1;
   }
 }
 
