@@ -4,43 +4,40 @@
     :class="{ 'block__content': onHp }"
   >
     <div
-      class="row row--flex block"
+      class="blog-section"
       v-if="isDataLoaded && hasAnyPosts"
     >
       <h2>
         {{ $t('blog.title') }}
       </h2>
 
-      <div
-        v-for="post in collection"
-        :key="post.uid"
-        class="blog-cart__wrapper"
-      >
-        <a
-          :href="post.path"
-          class="blog-cart"
+      <div class="blog-grid">
+        <div
+          v-for="post in collection"
+          :key="post.uid"
+          class="blog-card"
         >
-          <div class="blog-cart__img">
-            <img
-              :src="post.smallImage"
-              :alt="post.title"
-              width="500"
-              height="280"
-            >
-          </div>
-          <div class="blog-cart__content">
-            <h3 class="h3">
-              {{ post.title }}
-            </h3>
-            <div class="blog-cart__date">
-              {{ $t('blog.published') }} {{ post.createdAt | formatDate('dd. MM. yyyy') }}
+          <a
+            :href="post.path"
+            class="blog-card__link"
+          >
+            <div class="blog-card__image">
+              <img
+                :src="post.smallImage"
+                :alt="post.title"
+              >
             </div>
-            <p>{{ post.perex }}</p>
-            <div class="blog-cart__cta">
-              {{ $t('blog.read') }}
+            <div class="blog-card__content">
+              <h3 class="blog-card__title">
+                {{ post.title }}
+              </h3>
+              <div class="blog-card__date">
+                {{ post.createdAt | formatDate('dd. MM. yyyy') }}
+              </div>
+              <p class="blog-card__perex">{{ post.perex }}</p>
             </div>
-          </div>
-        </a>
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -121,107 +118,82 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .blog {
-    background-color: #f4f9fb;
+  .blog-section {
+    padding: 2rem 0;
   }
 
   h2 {
     font-size: 2.13rem;
     margin-bottom: 2rem;
     font-weight: 700;
+    text-align: center;
   }
 
-  .blog-cart__wrapper {
-    position: relative;
-    width: 100%;
-    padding-right: 1rem;
-    padding-left: 1rem;
-
-    @media (max-width: 1200px) {
-      width: 50%;
-    }
-
-    @media (max-width: 768px) {
-      width: 100%;
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    
+    @media (max-width: $--breakpoint-sm) {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
     }
   }
 
-  .blog-cart {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 1.86rem;
+  .blog-card {
+    background: white;
+    overflow: hidden;
+    transition: transform 0.2s ease;
+    
+    &:hover {
+      transform: translateY(-4px);
+    }
+  }
+
+  .blog-card__link {
+    display: block;
     text-decoration: none;
-    color: #333333;
+    color: inherit;
   }
 
-  .blog-cart__content {
-    padding: 2.33rem 2.66rem;
-    background: #ffffff;
-    flex: 0 0 70%;
-    max-width: 70%;
-    border-radius: 0 4px 4px 0;
-
-    @media (max-width: 1200px) {
-      flex: 0 0 100%;
-      max-width: 100%;
-      border-radius: 0 0 4px 4px;
-    }
-
-    @media (max-width: 480px) {
-      padding-right: 1rem;
-      padding-left: 1rem;
-    }
-  }
-
-  .blog-cart__img {
-    flex: 0 0 30%;
-    max-width: 30%;
-    position: relative;
-    background-color: #c4e4f3;
-    border-radius: 4px 0 0 4px;
-    @media (max-width: 1200px) {
-      flex: 0 0 100%;
-      max-width: 100%;
-      border-radius: 4px 4px 0 0;
-    }
-
-    img {
-      margin: 0 auto;
-      display: table;
-      @media (min-width: 1200px) {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-    }
-  }
-
-  .more-articles {
-    display: inline-block;
-    text-align: right;
+  .blog-card__image {
     width: 100%;
+    height: 200px;
+    overflow: hidden;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
-  .blog-cart__cta {
-    color: #2980b9;
+  .blog-card__content {
+    padding: 1.5rem;
   }
 
-  .h3 {
-    margin-top: 0;
-    margin-bottom: 0.33rem;
-    color: #057ec2;
-    font-weight: 700;
+  .blog-card__title {
     font-size: 1.2rem;
-    text-decoration: underline;
+    font-weight: 700;
+    color: $--color-primary;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.3;
   }
 
-  .blog-cart__date {
-    margin-bottom: 1em;
-    font-size: .8rem;
+  .blog-card__date {
+    font-size: 0.875rem;
+    color: $--color-gray-3;
+    margin-bottom: 1rem;
   }
 
-  .vue-content-placeholders-img {
-    height: 100%;
+  .blog-card__perex {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: $--color-text-regular;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 </style>
