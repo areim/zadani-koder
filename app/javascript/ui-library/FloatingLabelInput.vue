@@ -73,7 +73,7 @@ export default {
   width: 100%;
   height: 3rem;
   padding: 1rem 0.75rem 0.5rem 0.75rem;
-  border: 1px solid #d1d5db;
+  border: 1px solid $--color-light-blue-new;
   border-radius: 0.375rem;
   font-size: 1rem;
   background-color: white;
@@ -81,7 +81,7 @@ export default {
   
   &:focus {
     outline: none;
-    border-color: #097FB5;
+    border-color: $--color-primary;
     box-shadow: 0 0 0 3px rgba(9, 127, 181, 0.1);
   }
 }
@@ -92,7 +92,7 @@ export default {
   top: 50%;
   transform: translateY(-50%);
   font-size: 1rem;
-  color: #6b7280;
+  color: $--color-gray-1;
   pointer-events: none;
   transition: all 0.2s ease-in-out;
   background-color: white;

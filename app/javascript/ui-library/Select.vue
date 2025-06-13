@@ -17,7 +17,7 @@ export default {
 
   .el-tag--info {
     color: $--color-primary;
-    border-color: $--color-gray-2;
+    border-color: $--color-light-blue-new;
     background-color: $--color-gray-7;
 
     .el-tag__close {
@@ -32,16 +32,20 @@ export default {
 
   .el-input__inner {
     padding-right: rem(40px);
-    border-color: $--color-primary;
+    border-color: $--color-light-blue-new;
   }
 
   .el-input__suffix {
     width: rem(32px);
     right: 0;
-    background-color: $--color-primary;
+    color: $--color-light-blue-new;
+    background-color: $--color-white;
     border-radius: 0 4px 4px 0;
+    border: 1px solid $--color-light-blue-new;
+    border-left: none;
     .el-input__icon {
       font-weight: 700;
+      color: $--color-light-blue-new;
     }
   }
 }

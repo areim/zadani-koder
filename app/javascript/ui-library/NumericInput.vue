@@ -46,7 +46,7 @@ export default {
   .el-input__inner {
     padding-left: rem(40px + 8px);
     &:focus {
-      border-color: $--input-border-color;
+      border-color: $--color-light-blue-new;
     }
   }
 }
@@ -61,7 +61,7 @@ export default {
   left: 0;
   width: rem(32px);
   height: 100%;
-  border-right: $--input-border;
+  border-right: $--color-light-blue-new;
   font-size: rem(16px);
   pointer-events: none;
   .el-input__icon {
