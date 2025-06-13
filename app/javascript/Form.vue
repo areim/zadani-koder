@@ -97,7 +97,7 @@ export default {
       vs: '',
       ks: '',
       issedOn: '',
-      invoiceKind: 'vat_invoice',
+      invoiceKind: '',
       maturityKind: ''
     },
     invoiceKinds: [
