@@ -14,7 +14,10 @@
       <Form :model="resource" ref="form">
         <div class="form-row">
           <div class="form-col form-col--left">
-            <FormGroup prop="invoiceKind">
+            <FormGroup
+              prop="invoiceKind"
+              :help="$t('form.invoiceForm.fields.invoiceKind.inputHelp')"
+            >
               <Select
                 v-model="resource.invoiceKind"
                 :placeholder="$t('form.invoiceForm.fields.invoiceKind.label')"
