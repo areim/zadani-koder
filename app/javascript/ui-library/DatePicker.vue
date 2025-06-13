@@ -19,6 +19,7 @@ export default {
 <style lang="scss" scoped>
   ::v-deep {
     &.el-date-editor {
+      width: 100%;
       &.el-input--prefix {
         .el-input__inner {
           padding-right: rem(48px);

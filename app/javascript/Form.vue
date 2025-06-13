@@ -155,4 +155,8 @@ export default {
   display: flex;
   gap: 1rem;
 }
+
+.form-row--grouped > * {
+  flex: 1;
+}
 </style>
