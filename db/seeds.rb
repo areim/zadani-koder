@@ -7,7 +7,7 @@
     date: Faker::Date.between(from: 1.year.ago, to: Date.today),
     title: Faker::Lorem.sentence(word_count: 6),
     perex: Faker::Lorem.paragraph(sentence_count: 2),
-    image: Faker::Placeholdit.image(size: "600x400"),
+    image: "https://picsum.photos/600/400?random=#{rand(1000)}",
     body: Faker::Lorem.paragraphs.join("\n\n"),
     category_slug: Faker::Internet.slug(words: Faker::Lorem.words(number: 2).join(' ')),
     sub_category_slug: Faker::Internet.slug(words: Faker::Lorem.words(number: 2).join(' ')),
