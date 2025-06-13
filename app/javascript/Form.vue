@@ -29,26 +29,26 @@
               </Select>
             </FormGroup>
             <FormGroup prop="number">
-              <TextInput
+              <FloatingLabelInput
                 name="number"
-                type="string"
+                type="text"
                 v-model="resource.number"
                 :placeholder="$t('form.invoiceForm.fields.number.label')"
               />
             </FormGroup>
             <div class="form-row--grouped">
               <FormGroup prop="vs">
-                <TextInput
+                <FloatingLabelInput
                   name="vs"
-                  type="string"
+                  type="text"
                   v-model="resource.vs"
                   :placeholder="$t('form.invoiceForm.fields.vs.label')"
                 />
               </FormGroup>
               <FormGroup prop="ks">
-                <TextInput
+                <FloatingLabelInput
                   name="ks"
-                  type="string"
+                  type="text"
                   v-model="resource.ks"
                   :placeholder="$t('form.invoiceForm.fields.ks.label')"
                 />
