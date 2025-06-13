@@ -114,9 +114,9 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .form-card {
-  border: 1px solid #cbe0ed;
+  border: 1px solid $--color-light-blue-new;
   border-radius: 12px;
   background: #fff;
   padding: 2rem;
@@ -136,7 +136,7 @@ export default {
 .form-card__title {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #097FB5;
+  color: $--color-primary;
 }
 .form-card__body {
   width: 100%;
@@ -144,6 +144,11 @@ export default {
 .form-row {
   display: flex;
   gap: 2rem;
+
+  @media (max-width: $--breakpoint-sm) {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
 }
 .form-col {
   flex: 1;
